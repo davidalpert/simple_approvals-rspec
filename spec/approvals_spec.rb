@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'simple_approvals/rspec'
 
 describe 'simple_approvals/rspec' do
