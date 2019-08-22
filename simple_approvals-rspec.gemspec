@@ -18,10 +18,9 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'geminabox'
-  # spec.add_development_dependency "gemspec"
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'version_bumper'
-  spec.add_dependency 'json', '= 2.1.0' # 2.2.0 fails on windows - requires more investigation
+  spec.add_dependency 'json'
 end

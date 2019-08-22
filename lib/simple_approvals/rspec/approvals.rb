@@ -28,7 +28,7 @@ class Approvals
     end
 
     def pre_approve_if_asked(approved_path, scrubbed_content, **options)
-      File.write(approved_path, scrubbed_content) if options[:approve_all] || options[:accept_all]
+      File.write(approved_path, scrubbed_content) if options[:approve_all] || options[:accept_all] || ENV['APPROVE_ALL']
     end
 
     def handle_match(received_path, received_content, **options)
