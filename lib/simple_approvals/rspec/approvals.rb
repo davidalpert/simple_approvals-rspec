@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Top-level class to provide approval test support (inspired by http://approvaltests.com/)
 class Approvals
   class << self
