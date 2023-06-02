@@ -62,7 +62,17 @@ class Approvals
       message << "\n"
 
       expected_content = load_expected_content(approved_path, options)
-      ::RSpec::Expectations.fail_with message, expected_content, received_content
+
+      if !expected_content.include?("\n") || !received_content.include?("\n")
+        # work around a bug in rspec-support 3.12.0's differ
+        # where it shows nothing when both strings are single line
+        # https://github.com/rspec/rspec-support/blob/v3.12.0/lib/rspec/support/differ.rb#L16-L18
+        message << "expected: #{expected_content.inspect}\n"
+        message << "received: #{received_content.inspect}\n"
+        ::RSpec::Expectations.fail_with message
+      else
+        ::RSpec::Expectations.fail_with message, expected_content, received_content
+      end
     end
   end
 end
