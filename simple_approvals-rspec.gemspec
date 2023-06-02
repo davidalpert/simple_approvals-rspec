@@ -18,6 +18,8 @@ Gem::Specification.new do |spec|
   spec.test_files    = []
   spec.require_paths = ['lib']
 
+  spec.required_ruby_version = '~> 3.1.0' # see v3.2.x of this library for compatibility with ruby > 3.1
+
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'geminabox'
   spec.add_development_dependency 'rake'
